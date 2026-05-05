@@ -1,0 +1,72 @@
+.page {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+  background: var(--bg);
+  position: relative;
+}
+.page::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 50% 60% at 50% 30%, rgba(122,12,46,.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.card {
+  width: 100%; max-width: 420px;
+  border: 1.5px solid var(--bor);
+  background: rgba(20,15,10,.8);
+  backdrop-filter: blur(10px);
+  padding: 36px;
+  animation: fadeUp .3s ease;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px; font-weight: 700; color: var(--cr);
+  text-align: center; margin-bottom: 28px; cursor: pointer;
+}
+.logo em { color: var(--red); font-style: italic; }
+
+.tabs {
+  display: flex; gap: 0;
+  border-bottom: 1px solid var(--bor);
+  margin-bottom: 24px;
+}
+.tab {
+  flex: 1; padding: 10px;
+  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--gray); background: none; border: none;
+  border-bottom: 2px solid transparent; margin-bottom: -1px;
+  cursor: pointer; transition: all .15s;
+}
+.tab:hover { color: var(--cr); }
+.tabActive { color: var(--red); border-bottom-color: var(--red); }
+
+.form { display: flex; flex-direction: column; gap: 0; }
+
+.error {
+  font-size: 12px; color: var(--red);
+  padding: 10px 14px;
+  background: rgba(200,54,74,.08);
+  border: 1px solid rgba(200,54,74,.2);
+  margin-bottom: 14px;
+}
+
+.success {
+  font-size: 13px; color: #4a9e6a;
+  padding: 14px;
+  background: rgba(74,158,106,.08);
+  border: 1px solid rgba(74,158,106,.2);
+  line-height: 1.6;
+  text-align: center;
+}
+
+.terms {
+  font-size: 10px; color: var(--gray);
+  text-align: center; margin-top: 12px; line-height: 1.5;
+}

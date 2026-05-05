@@ -1,0 +1,76 @@
+.noBrand {
+  display: flex; align-items: center; gap: 16px;
+  padding: 18px 22px;
+  border: 1.5px solid var(--burg);
+  background: rgba(122,12,46,.06);
+  cursor: pointer; margin-bottom: 28px;
+  transition: background .15s;
+}
+.noBrand:hover { background: rgba(122,12,46,.1); }
+.noBrandIcon { font-size: 24px; flex-shrink: 0; }
+.noBrandTitle { font-size: 14px; color: var(--cr); font-weight: 500; margin-bottom: 3px; }
+.noBrandDesc { font-size: 12px; color: var(--gray); }
+.noBrandArrow { font-size: 18px; color: var(--red); margin-left: auto; }
+
+.statsGrid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 0; border: 1.5px solid var(--bor); margin-bottom: 24px;
+}
+.statCell {
+  padding: 22px 24px;
+  border-right: 1.5px solid var(--bor);
+  border-bottom: 1.5px solid var(--bor);
+}
+.statCell:nth-child(2n) { border-right: none; }
+.statCell:nth-last-child(-n+2) { border-bottom: none; }
+.statLabel { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); margin-bottom: 8px; }
+.statVal {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px; color: var(--red); font-style: italic; line-height: 1;
+}
+.statSub { font-size: 11px; color: var(--gray); margin-top: 4px; }
+.statBar { height: 2px; background: var(--bor); margin-top: 10px; }
+.statFill { height: 100%; background: var(--red); transition: width .4s; }
+
+.actionsGrid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 0; border: 1.5px solid var(--bor); margin-bottom: 24px;
+}
+.action {
+  padding: 22px 20px;
+  border-right: 1.5px solid var(--bor);
+  border-bottom: 1.5px solid var(--bor);
+  cursor: pointer; transition: background .15s;
+  position: relative;
+}
+.action:hover { background: rgba(122,12,46,.05); }
+.action:nth-child(3n) { border-right: none; }
+.action:nth-last-child(-n+3) { border-bottom: none; }
+.actionPro { opacity: .5; cursor: not-allowed; }
+.actionPro:hover { background: transparent !important; }
+.actionIcon { font-size: 20px; margin-bottom: 8px; }
+.actionName { font-size: 13px; color: var(--cr); font-weight: 500; margin-bottom: 3px; }
+.actionDesc { font-size: 11px; color: var(--gray); }
+.actionLock {
+  position: absolute; top: 10px; right: 10px;
+  font-size: 8px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--red); border: 1px solid var(--burg); padding: 2px 6px;
+}
+
+.upgradeBanner {
+  background: rgba(122,12,46,.08);
+  border: 1.5px solid var(--burg);
+  padding: 20px 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; flex-wrap: wrap;
+}
+.upgradeTitle {
+  font-family: 'Playfair Display', serif; font-style: italic;
+  font-size: 17px; color: var(--cr); margin-bottom: 4px;
+}
+.upgradeDesc { font-size: 12px; color: var(--gray); }
+
+@media (max-width: 640px) {
+  .statsGrid, .actionsGrid { grid-template-columns: 1fr; }
+  .statCell, .action { border-right: none !important; }
+}

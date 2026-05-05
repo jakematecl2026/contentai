@@ -1,0 +1,44 @@
+.stepBar {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 0; border: 1.5px solid var(--bor); margin-bottom: 28px;
+}
+.step {
+  padding: 14px 16px; text-align: center;
+  border-right: 1px solid var(--bor);
+}
+.step:last-child { border-right: none; }
+.stepActive { background: rgba(122,12,46,.08); }
+.stepDone { background: rgba(45,122,74,.06); }
+.stepN {
+  font-family: 'Playfair Display', serif; font-style: italic;
+  font-size: 22px; color: var(--bor); margin-bottom: 4px; line-height: 1;
+}
+.stepActive .stepN { color: var(--red); }
+.stepDone .stepN { color: var(--green); }
+.stepL { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); }
+
+.stepContent { animation: fadeUp .2s ease; }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: none; }
+}
+
+.btnRow { display: flex; gap: 10px; margin-top: 22px; flex-wrap: wrap; }
+
+.preview {
+  border: 1.5px solid var(--burg);
+  background: rgba(122,12,46,.06);
+  margin-bottom: 22px;
+}
+.previewEye {
+  font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--red); padding: 12px 18px;
+  border-bottom: 1px solid rgba(122,12,46,.2);
+}
+.previewGrid { padding: 14px 18px; display: flex; flex-direction: column; gap: 8px; }
+.previewRow { display: flex; gap: 16px; align-items: flex-start; }
+.previewKey {
+  font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--gray); flex-shrink: 0; width: 100px; padding-top: 2px;
+}
+.previewVal { font-size: 13px; color: var(--cr); line-height: 1.5; }
